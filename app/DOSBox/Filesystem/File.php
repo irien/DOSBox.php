@@ -2,13 +2,15 @@
 
 namespace DOSBox\Filesystem;
 
+date_default_timezone_set('America/Los_Angeles');
+
 use DOSBox\Filesystem\FileSystemItem;
 
 class File extends FileSystemItem {
     private $content;
 
     public function __construct($name, $content){
-        parent::__construct($name, NULL);
+        parent::__construct($name, NULL, NULL);
         $this->content = $content;
     }
 
@@ -22,6 +24,10 @@ class File extends FileSystemItem {
 
     public function getSize() {
         return strlen($this->content);
+    }  
+    
+    public function getTimeCreation($file){
+        return date("d/m/Y H:i A", filectime($file));
     }
 
     public function getNumberOfContainedFiles() {
