@@ -2,13 +2,15 @@
 
 namespace DOSBox\Filesystem;
 
+date_default_timezone_set('America/Los_Angeles');
+
 use DOSBox\Filesystem\FileSystemItem;
 
 class Directory extends FileSystemItem {
     private $content; // FileSystemItem
 
     public function __construct($name){
-        parent::__construct($name, NULL);
+        parent::__construct($name, NULL, NULL);
         $this->content = array();
     }
 
@@ -19,6 +21,7 @@ class Directory extends FileSystemItem {
             $this->removeParent($fileSystemItemToAdd);
         }
         $fileSystemItemToAdd->setParent($this);
+        $fileSystemItemToAdd->setCreationTime($this);
     }
 
     public function hasAnotherParent(FileSystemItem $fileSystemItem){
@@ -70,6 +73,10 @@ class Directory extends FileSystemItem {
         return 0;
     }
 
+    public function getTimeCreation($dir){
+        return date("d/m/Y H:i:s A", filectime($dir));
+    }
+    
     // TODO: Unit test this
     public function removeContent($item){
         $key = array_search($item, $this->content);

@@ -59,6 +59,7 @@ class CmdDir extends Command {
 
     public function printContent($directoryContent, IOutputter $outputter) {
         foreach ($directoryContent as $item) {
+            $outputter->printNoLine($item->getCreationTime() . " ");
             if ($item->isDirectory()) {
                 $outputter->printNoLine("\t\t\t");
                 $outputter->printNoLine("<DIR>");
