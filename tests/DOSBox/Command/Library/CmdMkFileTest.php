@@ -53,4 +53,27 @@ class CmdMkFileTest extends DOSBoxTestCase {
         // To be implemented
     }
 
+    public function testCmdMkFile_NoContent(){
+        // To be implemented
+        // given
+        $newFileName = "testFile";
+        $newFileContent = NULL;
+
+        // when
+        $this->executeCommand("mkfile " . $newFileName . " " . $newFileContent);
+
+        // then
+        // 1. File is added
+        $this->assertEquals($this->numbersOfFilesBeforeTest + 1, $this->drive->getCurrentDirectory()->getNumberOfContainedFiles());
+
+        // 2. No error is found in console
+        $this->assertNotNull($this->mockOutputter);
+        $this->assertEmpty($this->mockOutputter->getOutput());
+
+        // 3. File has no content
+        $createdFile = $this->drive->getItemFromPath( $this->drive->getCurrentDirectory()->getPath() . "\\" . $newFileName);
+        $this->assertEquals($newFileContent, $createdFile->getFileContent());
+
+    }
+
 } 
