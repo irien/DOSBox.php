@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="tests" tests="62" assertions="120" failures="0" errors="0" time="0.259612">
+    <testsuite name="CommandInvokerTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Command\CommandInvokerTest.php" tests="14" assertions="16" failures="0" errors="0" time="0.075177">
+      <testcase name="testGetCommands" class="CommandInvokerTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Command\CommandInvokerTest.php" line="19" assertions="1" time="0.026646"/>
+      <testcase name="testParseEmptyStringCommand" class="CommandInvokerTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Command\CommandInvokerTest.php" line="23" assertions="1" time="0.007888"/>
+      <testcase name="testParseOnlyCommandName" class="CommandInvokerTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Command\CommandInvokerTest.php" line="27" assertions="1" time="0.003173"/>
+      <testcase name="testParseUpperCaseCommandName" class="CommandInvokerTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Command\CommandInvokerTest.php" line="31" assertions="1" time="0.003172"/>
+      <testcase name="testParseCommandNameWithOneParam" class="CommandInvokerTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Command\CommandInvokerTest.php" line="35" assertions="1" time="0.003415"/>
+      <testcase name="testParseCommandNameWithComma" class="CommandInvokerTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Command\CommandInvokerTest.php" line="39" assertions="1" time="0.003412"/>
+      <testcase name="testParseCommandNameEndsWithComma" class="CommandInvokerTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Command\CommandInvokerTest.php" line="43" assertions="1" time="0.003773"/>
+      <testcase name="testParseCommandNameEndsWithWhiteSpaces" class="CommandInvokerTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Command\CommandInvokerTest.php" line="47" assertions="1" time="0.003191"/>
+      <testcase name="testParseCommandNameWithSingleLetterParam" class="CommandInvokerTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Command\CommandInvokerTest.php" line="51" assertions="1" time="0.003418"/>
+      <testcase name="testExtractCommandParams" class="CommandInvokerTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Command\CommandInvokerTest.php" line="55" assertions="1" time="0.003454"/>
+      <testcase name="testParseCommandNoParams" class="CommandInvokerTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Command\CommandInvokerTest.php" line="59" assertions="1" time="0.002076"/>
+      <testcase name="testParseCommandTwoParamsWithSeveralSpaces" class="CommandInvokerTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Command\CommandInvokerTest.php" line="65" assertions="3" time="0.004804"/>
+      <testcase name="testExecuteCommand" class="CommandInvokerTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Command\CommandInvokerTest.php" line="72" assertions="1" time="0.002877"/>
+      <testcase name="testExecuteUnavailableCommand" class="CommandInvokerTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Command\CommandInvokerTest.php" line="77" assertions="1" time="0.003878"/>
+    </testsuite>
+    <testsuite name="CmdCdTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Command\Library\CmdCdTest.php" tests="13" assertions="27" failures="0" errors="0" time="0.046838">
+      <testcase name="testCmdCd_ChangeToSubdirectory_ChangesDirectory" class="CmdCdTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Command\Library\CmdCdTest.php" line="33" assertions="2" time="0.006689"/>
+      <testcase name="testCmdCd_ChangeToSubDirectoryWithEndingBacklash_ChangesDirectory" class="CmdCdTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Command\Library\CmdCdTest.php" line="39" assertions="2" time="0.003152"/>
+      <testcase name="testCmdCd_WithBacklash_ChangesToRoot" class="CmdCdTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Command\Library\CmdCdTest.php" line="45" assertions="2" time="0.003062"/>
+      <testcase name="testCmdCd_WithPointPoint_ChangesToParent" class="CmdCdTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Command\Library\CmdCdTest.php" line="53" assertions="2" time="0.002958"/>
+      <testcase name="testCmdCd_WithPointPointInRootDir_RemainsInRootDir" class="CmdCdTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Command\Library\CmdCdTest.php" line="61" assertions="2" time="0.002846"/>
+      <testcase name="testCmdCd_WithPoint_RemainsInCurrentDirectory" class="CmdCdTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Command\Library\CmdCdTest.php" line="69" assertions="2" time="0.003061"/>
+      <testcase name="testCmdCd_WithoutParameter_PrintsCurrentDirectory" class="CmdCdTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Command\Library\CmdCdTest.php" line="77" assertions="2" time="0.003781"/>
+      <testcase name="testCmdCd_WithInvalidAbsolutePath_RemainsInCurrentDirectory" class="CmdCdTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Command\Library\CmdCdTest.php" line="84" assertions="2" time="0.003450"/>
+      <testcase name="testCmdCd_WithFileAsPath_RemainsInCurrentDirectory" class="CmdCdTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Command\Library\CmdCdTest.php" line="91" assertions="2" time="0.003820"/>
+      <testcase name="testCmdCd_WithRelativePath_ChangesDirectory" class="CmdCdTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Command\Library\CmdCdTest.php" line="98" assertions="2" time="0.002977"/>
+      <testcase name="testCmdCd_WithSingleLetterDirectory_ChangesDirectory" class="CmdCdTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Command\Library\CmdCdTest.php" line="104" assertions="2" time="0.003938"/>
+      <testcase name="testCmdCd_ChangeToNotExistingDirectory_PrintsError" class="CmdCdTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Command\Library\CmdCdTest.php" line="114" assertions="2" time="0.003154"/>
+      <testcase name="testCmdCd_AllParametersAreReset" class="CmdCdTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Command\Library\CmdCdTest.php" line="121" assertions="3" time="0.003950"/>
+    </testsuite>
+    <testsuite name="CmdDirTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Command\Library\CmdDirTest.php" tests="11" assertions="18" failures="0" errors="0" time="0.055296">
+      <testcase name="testCmdDir_WithoutParameter_PrintPathOfCurrentDirectory" class="CmdDirTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Command\Library\CmdDirTest.php" line="43" assertions="1" time="0.005513"/>
+      <testcase name="testCmdDir_WithoutParameter_PrintFiles" class="CmdDirTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Command\Library\CmdDirTest.php" line="49" assertions="2" time="0.004761"/>
+      <testcase name="testCmdDir_WithoutParameter_PrintDirectories" class="CmdDirTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Command\Library\CmdDirTest.php" line="56" assertions="2" time="0.004513"/>
+      <testcase name="testCmdDir_WithoutParameter_PrintsFooter" class="CmdDirTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Command\Library\CmdDirTest.php" line="63" assertions="2" time="0.004465"/>
+      <testcase name="testCmdDir_PathAsParameter_PrintGivenPath" class="CmdDirTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Command\Library\CmdDirTest.php" line="70" assertions="1" time="0.004428"/>
+      <testcase name="testCmdDir_PathAsParameter_PrintFilesInGivenPath" class="CmdDirTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Command\Library\CmdDirTest.php" line="76" assertions="1" time="0.004467"/>
+      <testcase name="testCmdDir_PathAsParameter_PrintsFooter" class="CmdDirTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Command\Library\CmdDirTest.php" line="82" assertions="2" time="0.005130"/>
+      <testcase name="testCmdDir_FileAsParameter_PrintFilesInGivenPath" class="CmdDirTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Command\Library\CmdDirTest.php" line="89" assertions="2" time="0.005544"/>
+      <testcase name="testCmdDir_FileAsParameter_PrintsFooter" class="CmdDirTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Command\Library\CmdDirTest.php" line="96" assertions="2" time="0.006222"/>
+      <testcase name="testCmdDir_NotExistingDirectory_PrintsError" class="CmdDirTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Command\Library\CmdDirTest.php" line="103" assertions="1" time="0.003576"/>
+      <testcase name="testCmdDir_AllParametersAreReset" class="CmdDirTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Command\Library\CmdDirTest.php" line="108" assertions="2" time="0.006677"/>
+    </testsuite>
+    <testsuite name="CmdMkDirTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Command\Library\CmdMkDirTest.php" tests="6" assertions="15" failures="0" errors="0" time="0.023929">
+      <testcase name="testCreateDirectory" class="CmdMkDirTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Command\Library\CmdMkDirTest.php" line="22" assertions="1" time="0.002276"/>
+      <testcase name="testCmdMkDir_CreateNewDirectory_NewDirectoryIsAdded" class="CmdMkDirTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Command\Library\CmdMkDirTest.php" line="28" assertions="4" time="0.005575"/>
+      <testcase name="testCmdMkDir_SingleLetterDirectory_NewDirectoryIsAdded" class="CmdMkDirTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Command\Library\CmdMkDirTest.php" line="39" assertions="2" time="0.003183"/>
+      <testcase name="testCmdMkDir_ParameterContainsBacklash_ErrorMessagePrinted" class="CmdMkDirTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Command\Library\CmdMkDirTest.php" line="53" assertions="1" time="0.001800"/>
+      <testcase name="testCmdMkDir_ParameterContainsBacklash_NoDirectoryCreated" class="CmdMkDirTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Command\Library\CmdMkDirTest.php" line="58" assertions="2" time="0.003303"/>
+      <testcase name="testCmdMkDir_SeveralParameters_SeveralNewDirectoriesCreated" class="CmdMkDirTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Command\Library\CmdMkDirTest.php" line="64" assertions="5" time="0.007792"/>
+    </testsuite>
+    <testsuite name="CmdMkFileTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Command\Library\CmdMkFileTest.php" tests="4" assertions="8" failures="0" errors="0" time="0.014071">
+      <testcase name="testCmdMkFile_WithoutContent_CreatesEmptyFile" class="CmdMkFileTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Command\Library\CmdMkFileTest.php" line="27" assertions="0" time="0.001739"/>
+      <testcase name="testCmdMkFile_WithContent_CreatesFileWithContent" class="CmdMkFileTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Command\Library\CmdMkFileTest.php" line="31" assertions="4" time="0.005978"/>
+      <testcase name="testCmdMkFile_NoParameters_ReportsError" class="CmdMkFileTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Command\Library\CmdMkFileTest.php" line="52" assertions="0" time="0.000956"/>
+      <testcase name="testCmdMkFile_NoContent" class="CmdMkFileTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Command\Library\CmdMkFileTest.php" line="56" assertions="4" time="0.005398"/>
+    </testsuite>
+    <testsuite name="DirectoryTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Filesystem\DirectoryTest.php" tests="5" assertions="6" failures="0" errors="0" time="0.008688">
+      <testcase name="testAddDir" class="DirectoryTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Filesystem\DirectoryTest.php" line="20" assertions="2" time="0.002631"/>
+      <testcase name="testRemoveParent" class="DirectoryTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Filesystem\DirectoryTest.php" line="26" assertions="1" time="0.002276"/>
+      <testcase name="testSubdirectoryParentIsSetCorrectly1" class="DirectoryTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Filesystem\DirectoryTest.php" line="33" assertions="2" time="0.001713"/>
+      <testcase name="testRename" class="DirectoryTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Filesystem\DirectoryTest.php" line="45" assertions="1" time="0.001124"/>
+      <testcase name="testNumberOfFilesAndDirectories" class="DirectoryTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Filesystem\DirectoryTest.php" line="50" assertions="0" time="0.000944"/>
+    </testsuite>
+    <testsuite name="DriveTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Filesystem\DriveTest.php" tests="8" assertions="30" failures="0" errors="0" time="0.034864">
+      <testcase name="testGetItemFromDirectory" class="DriveTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Filesystem\DriveTest.php" line="44" assertions="1" time="0.002248"/>
+      <testcase name="testPatchGivenItem" class="DriveTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Filesystem\DriveTest.php" line="49" assertions="1" time="0.003448"/>
+      <testcase name="testGetItemFromPath" class="DriveTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Filesystem\DriveTest.php" line="53" assertions="2" time="0.003190"/>
+      <testcase name="testCurrentDirectory" class="DriveTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Filesystem\DriveTest.php" line="70" assertions="2" time="0.003134"/>
+      <testcase name="testGetItemFromPathWithAbsolutePaths" class="DriveTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Filesystem\DriveTest.php" line="80" assertions="10" time="0.008001"/>
+      <testcase name="testGetItemFromPathWithRelativePaths" class="DriveTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Filesystem\DriveTest.php" line="108" assertions="1" time="0.003065"/>
+      <testcase name="testGetItemFromPathWithSpecialPaths" class="DriveTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Filesystem\DriveTest.php" line="115" assertions="8" time="0.007881"/>
+      <testcase name="testSingleCharacterDirectories" class="DriveTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Filesystem\DriveTest.php" line="147" assertions="5" time="0.003897"/>
+    </testsuite>
+    <testsuite name="FileTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Filesystem\FileTest.php" tests="1" assertions="0" failures="0" errors="0" time="0.000749">
+      <testcase name="testFile" class="FileTest" file="C:\xampp\htdocs\DOSBox.php\tests\DOSBox\Filesystem\FileTest.php" line="12" assertions="0" time="0.000749"/>
+    </testsuite>
+  </testsuite>
+</testsuites>
