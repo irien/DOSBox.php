@@ -2,7 +2,7 @@
 
 namespace DOSBox\Filesystem;
 
-date_default_timezone_set('America/Los_Angeles');
+date_default_timezone_set('Asia/Jakarta');
 
 use DOSBox\Filesystem\FileSystemItem;
 

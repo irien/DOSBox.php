@@ -2,7 +2,7 @@
 
 namespace DOSBox\Filesystem;
 
-date_default_timezone_set('America/Los_Angeles');
+date_default_timezone_set('Asia/Jakarta');
 
 use DOSBox\Filesystem\FileSystemItem;
 
@@ -71,10 +71,6 @@ class Directory extends FileSystemItem {
 
     public function getSize(){
         return 0;
-    }
-
-    public function getTimeCreation($dir){
-        return date("d/m/Y H:i:s A", filectime($dir));
     }
     
     // TODO: Unit test this
