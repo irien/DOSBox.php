@@ -22,13 +22,22 @@ class CmdTime extends Command {
     }
 
     public function execute(IOutputter $outputter){
-        $fileName = $this->params[0];
-        if (!isset($this->params[1])) {
-            $this->params[1] = null;
+        if ($this->getParameterCount() == 0){
+            $outputter->printLine(date("H:i:s A"));
+        }elseif ($this->getParameterCount() == 1){
+            if(!preg_match("/^[0-9]{2}:[0-9]{2}:[0-9]{2}$/", $this->params[0])){
+                $outputter->printLine("Params error");
             }
-        $fileContent = $this->params[1];
-        $newFile = new File($fileName, $fileContent);
-        $this->getDrive()->getCurrentDirectory()->add($newFile);
+        }
+
+
+        //$fileName = $this->params[0];
+        //if (!isset($this->params[1])) {
+        //    $this->params[1] = null;
+        //    }
+        //$fileContent = $this->params[1];
+        //$newFile = new File($fileName, $fileContent);
+        //$this->getDrive()->getCurrentDirectory()->add($newFile);
     }
 
 }
