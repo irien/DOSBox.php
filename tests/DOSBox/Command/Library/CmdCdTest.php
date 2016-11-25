@@ -116,6 +116,7 @@ class CmdCdTest extends DOSBoxTestCase {
         $this->executeCommand("cd NonExistingDirectory");
         $this->assertSame($this->rootDir, $this->drive->getCurrentDirectory());
         $this->assertContains(CmdCd::SYSTEM_CANNOT_FIND_THE_PATH_SPECIFIED, $this->mockOutputter->getOutput());
+        //$this->assertEmpty($this->mockOutputter->getOutput());
     }
 
     public function testCmdCd_AllParametersAreReset() {
