@@ -57,22 +57,43 @@ class CmdDir extends Command {
         $outputter->newLine();
     }
 
-    public function printContent($directoryContent, IOutputter $outputter) {
-        foreach ($directoryContent as $item) {
-            $outputter->printNoLine($item->getCreationTime() . " ");
-            if ($item->isDirectory()) {
-                $outputter->printNoLine("\t\t\t");
-                $outputter->printNoLine("<DIR>");
-                $outputter->printNoLine("\t");
-                $outputter->printNoLine("  ");
-            } else {
-                $outputter->printNoLine("\t\t\t\t");
-                $outputter->printNoLine($item->getSize() . " ");
-            }
-
-            $outputter->printNoLine($item->getName());
-            $outputter->newLine();
-        }
+    public function printContent($directoryContent, IOutputter $outputter) {        
+        if ($this->getParameterCount() == 0) {
+            foreach ($directoryContent as $item) {
+                $outputter->printNoLine($item->getCreationTime() . " ");
+                if ($item->isDirectory()) {
+                    $outputter->printNoLine("\t\t\t");
+                    $outputter->printNoLine("<DIR>");
+                    $outputter->printNoLine("\t");
+                    $outputter->printNoLine("  ");
+                } else {
+                    $outputter->printNoLine("\t\t\t\t");
+                    $outputter->printNoLine($item->getSize() . " ");
+                }
+    
+                $outputter->printNoLine($item->getName());
+                $outputter->newLine();
+            }   
+        } else {
+            foreach ($directoryContent as $item) {
+                if ($item->getName()==$this->params[0]){
+                    $outputter->printNoLine($item->getCreationTime() . " ");
+                    if ($item->isDirectory()) {
+                        $outputter->printNoLine("\t\t\t");
+                        $outputter->printNoLine("<DIR>");
+                        $outputter->printNoLine("\t");
+                        $outputter->printNoLine("  ");
+                    } else {
+                        $outputter->printNoLine("\t\t\t\t");
+                        $outputter->printNoLine($item->getSize() . " ");
+                    }
+        
+                    $outputter->printNoLine($item->getName());
+                    $outputter->newLine();
+                }
+            }  
+        } 
+        
     }
 
     public function printFooter($directoryToPrint, IOutputter $outputter) {

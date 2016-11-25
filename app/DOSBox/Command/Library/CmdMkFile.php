@@ -8,7 +8,6 @@ use DOSBox\Filesystem\File;
 use DOSBox\Command\BaseCommand as Command;
 
 class CmdMkFile extends Command {
-    
     public function __construct($commandName, IDrive $drive){
         parent::__construct($commandName, $drive);
     }
@@ -23,12 +22,23 @@ class CmdMkFile extends Command {
 
     public function execute(IOutputter $outputter){
         $fileName = $this->params[0];
-        if (!isset($this->params[1])) {
-            $this->params[1] = null;
+        
+        $directoryContent = $this->getDrive()->getCurrentDirectory()->getContent();
+        $is_exist = false;
+        foreach ($directoryContent as $item) {
+            if (!$item->isDirectory() and $item->getName()==$this->params[0]) $is_exist = true;
+        }
+        
+        if($is_exist == true){
+            $outputter->printLine("Nama file sudah ada");
+        } else {
+            if(!isset($this->params[1])){
+                $this->params[1]=null;
             }
-        $fileContent = $this->params[1];
-        $newFile = new File($fileName, $fileContent);
-        $this->getDrive()->getCurrentDirectory()->add($newFile);
+            $fileContent = $this->params[1];
+            $newFile = new File($fileName, $fileContent);
+            $this->getDrive()->getCurrentDirectory()->add($newFile);
+        }     
     }
 
 }
