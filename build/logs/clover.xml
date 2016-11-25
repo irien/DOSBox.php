@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1479977663">
-  <project timestamp="1479977663">
+<coverage generated="1480059846">
+  <project timestamp="1480059846">
     <package name="DOSBox\Command">
       <file name="C:\xampp\htdocs\DOSBox.php/app/DOSBox/Command/BaseCommand.php">
         <class name="BaseCommand" namespace="DOSBox\Command">
