@@ -37,19 +37,23 @@ class CmdDir extends Command {
             return null;
         }
 
-        if (!$fsi->isDirectory()) {
+        //if (!$fsi->isDirectory()) {
             return $fsi->getParent();
-        }
+        //}
 
-        return $fsi;
+        //return $fsi;
     }
 
     public function execute(IOutputter $outputter){
-        $this->checkParameterValues($outputter);
-               
-        $this->printHeader($this->directoryToPrint, $outputter);
-        $this->printContent($this->directoryToPrint->getContent(), $outputter);
-        $this->printFooter($this->directoryToPrint, $outputter); 
+        $this->checkParameterValues($outputter);               
+        
+        if ($this->getParameterCount() == 0) {
+            $this->printHeader($this->directoryToPrint, $outputter);
+            $this->printContent($this->directoryToPrint->getContent(), $outputter);
+            $this->printFooter($this->directoryToPrint, $outputter);
+        } else {                        
+            $this->printContent2($this->directoryToPrint->getContent(), $outputter);
+        } 
     }
 
     public function printHeader($directoryToPrint, IOutputter $outputter) {
@@ -58,8 +62,26 @@ class CmdDir extends Command {
     }
 
     public function printContent($directoryContent, IOutputter $outputter) {        
-        if ($this->getParameterCount() == 0) {
-            foreach ($directoryContent as $item) {
+        foreach ($directoryContent as $item) {
+            $outputter->printNoLine($item->getCreationTime() . " ");
+            if ($item->isDirectory()) {
+                $outputter->printNoLine("\t\t\t");
+                $outputter->printNoLine("<DIR>");
+                $outputter->printNoLine("\t");
+                $outputter->printNoLine("  ");
+            } else {
+                $outputter->printNoLine("\t\t\t\t");
+                $outputter->printNoLine($item->getSize() . " ");
+            }
+
+            $outputter->printNoLine($item->getName());
+            $outputter->newLine();
+        } 
+    }
+    
+    public function printContent2($directoryContent, IOutputter $outputter) {  
+        foreach ($directoryContent as $item) {
+            if ($item->getName()==$this->params[0]){
                 $outputter->printNoLine($item->getCreationTime() . " ");
                 if ($item->isDirectory()) {
                     $outputter->printNoLine("\t\t\t");
@@ -73,28 +95,9 @@ class CmdDir extends Command {
     
                 $outputter->printNoLine($item->getName());
                 $outputter->newLine();
-            }   
-        } else {
-            foreach ($directoryContent as $item) {
-                if ($item->getName()==$this->params[0]){
-                    $outputter->printNoLine($item->getCreationTime() . " ");
-                    if ($item->isDirectory()) {
-                        $outputter->printNoLine("\t\t\t");
-                        $outputter->printNoLine("<DIR>");
-                        $outputter->printNoLine("\t");
-                        $outputter->printNoLine("  ");
-                    } else {
-                        $outputter->printNoLine("\t\t\t\t");
-                        $outputter->printNoLine($item->getSize() . " ");
-                    }
-        
-                    $outputter->printNoLine($item->getName());
-                    $outputter->newLine();
-                }
-            }  
-        } 
-        
-    }
+            }
+        }         
+    }    
 
     public function printFooter($directoryToPrint, IOutputter $outputter) {
         $outputter->printLine("\t" . $directoryToPrint->getNumberOfContainedFiles() . " File(s)");
