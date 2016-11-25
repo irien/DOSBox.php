@@ -46,10 +46,10 @@ class CmdDir extends Command {
 
     public function execute(IOutputter $outputter){
         $this->checkParameterValues($outputter);
-
+               
         $this->printHeader($this->directoryToPrint, $outputter);
         $this->printContent($this->directoryToPrint->getContent(), $outputter);
-        $this->printFooter($this->directoryToPrint, $outputter);
+        $this->printFooter($this->directoryToPrint, $outputter); 
     }
 
     public function printHeader($directoryToPrint, IOutputter $outputter) {
