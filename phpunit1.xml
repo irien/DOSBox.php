@@ -5,8 +5,9 @@
          backupGlobals="false"
          verbose="false">
   <testsuites>
-    <testsuite name="Calculator">
+    <testsuite name="dosbox">
       <directory suffix="*Test.php">./tests</directory>
+        <!--<file>tests/Command/Library/CmdCdTest.php</file>-->
     </testsuite>
   </testsuites>
 

@@ -7,7 +7,7 @@ use DOSBox\Interfaces\IOutputter;
 use DOSBox\Filesystem\File;
 use DOSBox\Command\BaseCommand as Command;
 
-class CmdMkFile extends Command {
+class CmdTime extends Command {
     
     public function __construct($commandName, IDrive $drive){
         parent::__construct($commandName, $drive);
