@@ -30,14 +30,6 @@ class CmdTime extends Command {
             }
         }
 
-
-        //$fileName = $this->params[0];
-        //if (!isset($this->params[1])) {
-        //    $this->params[1] = null;
-        //    }
-        //$fileContent = $this->params[1];
-        //$newFile = new File($fileName, $fileContent);
-        //$this->getDrive()->getCurrentDirectory()->add($newFile);
     }
 
 }

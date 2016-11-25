@@ -22,13 +22,18 @@ class CmdVer extends Command {
     }
 
     public function execute(IOutputter $outputter){
-        $outputter->printLine("Microsoft Windows XP [version 5.1.2600]");
-        if (isset($this->params[0])&&($this->params[0]=="/w")) {
-            $outputter->printLine("Irien Kamaratih Arsiani \t- irien@github.com");
-            $outputter->printLine("Nugroho Puspito Yudho \t\t- nugrohopy@github.com");
-            $outputter->printLine("Sawung Murdha Anggara \t\t- sawung@github.com");
-            $outputter->printLine("Meidiana Rahmawati \t\t- rahmawatimei@github.com");
+        if ($this->getParameterCount() == 0){
+            $outputter->printLine("Microsoft Windows XP [version 5.1.2600]");
+        }elseif ($this->getParameterCount() == 1){
+            if($this->params[0]=="/w"){
+                $outputter->printLine("Microsoft Windows XP [version 5.1.2600]");
+                $outputter->printLine("Irien Kamaratih Arsiani \t- irien@github.com");
+                $outputter->printLine("Nugroho Puspito Yudho \t\t- nugrohopy@github.com");
+                $outputter->printLine("Sawung Murdha Anggara \t\t- sawung@github.com");
+                $outputter->printLine("Meidiana Rahmawati \t\t- rahmawatimei@github.com");
+            }
         }
+
     }
 
 }
